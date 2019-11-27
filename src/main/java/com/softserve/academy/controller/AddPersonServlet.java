@@ -16,14 +16,10 @@ public class AddPersonServlet extends HttpServlet {
 
     private PersonRepository personRepository = new PersonRepository();
 
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         String personName = request.getParameter("name");
         int personAge = Integer.parseInt(request.getParameter("age"));
-
         personRepository.addPerson(new Person(personName, personAge));
-
         response.sendRedirect("/");
 
     }

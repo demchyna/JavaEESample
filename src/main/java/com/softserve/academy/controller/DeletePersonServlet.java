@@ -17,7 +17,6 @@ public class DeletePersonServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int personId = Integer.parseInt(request.getParameter("id"));
         personRepository.deletePerson(personId);
-
         response.sendRedirect("/");
     }
 }
